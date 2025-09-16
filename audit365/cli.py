@@ -1,13 +1,14 @@
 import click
+import rich_click
 
-from audit365.commands.personal_emails import personal_emails
+from audit365.commands.message_trace import message_trace
 
 
-@click.group()
+@click.group(cls=rich_click.RichGroup)
 def cli() -> None:
     pass
 
-cli.add_command(personal_emails)
+cli.add_command(message_trace)
 
 if __name__ == "__main__":
-    pass
+    cli()
