@@ -4,4 +4,48 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "click>=8.2.1",
+    "openpyxl>=3.1.5",
+    "pandas>=2.3.2",
+    "rich-click>=1.8.9",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.12.11",
+]
+
+[tool.ruff]
+line-length = 88
+indent-width = 4
+target-version = "py313"
+
+exclude = [".git", "__pycache__", ".github"]
+
+[tool.ruff.lint]
+select = [
+	"F",
+	"E",
+	"W",
+	"N",
+	"UP",
+	"ANN",
+	"BLE",
+	"A",
+	"COM",
+	"C4",
+	"DTZ",
+	"Q",
+	"SLF",
+	"SIM",
+	"PTH",
+	"I",
+]
+ignore = ["COM812"]
+fixable = ["ALL"]
+
+[tool.ruff.format]
+quote-style = "double"
+skip-magic-trailing-comma = false
+line-ending = "auto"
